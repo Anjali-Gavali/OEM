@@ -12,7 +12,7 @@
       <link href="${contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">
       <link href="${contextPath}/resources/css/common.css" rel="stylesheet">
       <link href="${contextPath}/resources/css/Myapp.css" rel="stylesheet">
-      
+      <link href="${contextPath}/resources/css/slider.css" rel="stylesheet">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       
 
@@ -21,21 +21,34 @@
 
 <!-- Navigation Bar -->
 
-<div class="navbar">
+ <div class="navbar">
   <a class="active" href="/hm"><i class="fa fa-fw fa-home"></i> Home</a> 
   <a href="#"><i class="fa fa-fw fa-search"></i> Search</a> 
   <a href="#"><i class="fa fa-fw fa-envelope"></i> Contact</a> 
-  <a href="/login"><i class="fa fa-fw fa-user"></i> Login</a>
-  <a href="/registration"><i class="fa fa-fw fa-user"></i> Registration</a>
-</div>
+  <a style="float:right" href="/login"><i class="fa fa-fw fa-user"></i> Login</a>
+  <a style="float:right" href="/registration"><i class="fa fa-fw fa-user"></i> Registration</a>
+</div> 
 
-<div>
-        <div>
-            <h1>Another page</h1>
-            <h2>Hello ${message}</h2>
-             
-            Click on this <strong><a href="/login">link</a></strong> to visit previous page.
-        </div>
-    </div>
+
+<div class="container">
+
+
+  <div class="slideshow_wrapper">
+    <div class="slideshow">
+      <div class="slide_one slide">
+        <img src="${contextPath}/resources/image/3.png"  />
+      </div>
+      
+      <div class="slide_two slide">
+        <img src="${contextPath}/resources/image/1.jpg" />
+      </div>
+      
+       <div class="slide_three slide">
+        <img class="slide_img" src="${contextPath}/resources/image/2.png" />
+      </div>
+    </div></div></div>
+    
+   
+
 </body>
 </html>

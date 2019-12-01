@@ -3,9 +3,13 @@
 body {font-family: Arial, Helvetica, sans-serif;}
 
 .navbar {
-  width: 100%;
+  /* width: 100%; */
   background-color: #555;
-  overflow: auto;
+  /* overflow: auto; */
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
 
 .navbar a {
@@ -24,7 +28,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
   background-color: #4CAF50;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 10px) {
   .navbar a {
     float: none;
     display: block;

@@ -26,8 +26,8 @@
   <a class="active" href="/hm"><i class="fa fa-fw fa-home"></i> Home</a> 
   <a href="#"><i class="fa fa-fw fa-search"></i> Search</a> 
   <a href="#"><i class="fa fa-fw fa-envelope"></i> Contact</a> 
-  <a href="/login"><i class="fa fa-fw fa-user"></i> Login</a>
-  <a href="/registration"><i class="fa fa-fw fa-user"></i> Registration</a>
+  <a style="float:right" href="/login"><i class="fa fa-fw fa-user"></i> Login</a>
+  <a style="float:right" href="/registration"><i class="fa fa-fw fa-user"></i> Registration</a>
 </div>
 
     <div class="container">
