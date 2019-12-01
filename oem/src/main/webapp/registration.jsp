@@ -11,9 +11,23 @@
 
       <link href="${contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">
       <link href="${contextPath}/resources/css/common.css" rel="stylesheet">
+      <link href="${contextPath}/resources/css/Myapp.css" rel="stylesheet">
+      
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      
   </head>
 
   <body>
+
+<!-- Navigation Bar -->
+
+<div class="navbar">
+  <a class="active" href="/hm"><i class="fa fa-fw fa-home"></i> Home</a> 
+  <a href="#"><i class="fa fa-fw fa-search"></i> Search</a> 
+  <a href="#"><i class="fa fa-fw fa-envelope"></i> Contact</a> 
+  <a href="/login"><i class="fa fa-fw fa-user"></i> Login</a>
+  <a href="/registration"><i class="fa fa-fw fa-user"></i> Registration</a>
+</div>
 
     <div class="container">
 
@@ -39,6 +53,28 @@
                     <form:input type="password" path="passwordConfirm" class="form-control"
                                 placeholder="Confirm your password"></form:input>
                     <form:errors path="passwordConfirm"></form:errors>
+                </div>
+            </spring:bind>
+            
+            <spring:bind path="email">
+                <div class="form-group ${status.error ? 'has-error' : ''}">
+                    <form:input type="text" path="email" class="form-control" placeholder="Email"
+                                ></form:input>
+                    <form:errors path="email"></form:errors>
+                </div>
+            </spring:bind>
+            <spring:bind path="contact">
+                <div class="form-group ${status.error ? 'has-error' : ''}">
+                    <form:input type="text" path="contact" class="form-control" placeholder="Contact Number"
+                                ></form:input>
+                    <form:errors path="contact"></form:errors>
+                </div>
+            </spring:bind>
+            <spring:bind path="address">
+                <div class="form-group ${status.error ? 'has-error' : ''}">
+                    <form:input type="text" path="address" class="form-control" placeholder="Address"
+                                ></form:input>
+                    <form:errors path="address"></form:errors>
                 </div>
             </spring:bind>
 

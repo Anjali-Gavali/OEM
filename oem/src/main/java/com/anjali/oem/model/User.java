@@ -13,7 +13,7 @@ import javax.persistence.Table;
 import javax.persistence.Transient;
 
 @Entity
-@Table(name = "user")
+@Table(name = "user_d")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

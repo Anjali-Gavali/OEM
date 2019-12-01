@@ -12,9 +12,23 @@
 
       <link href="${contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">
       <link href="${contextPath}/resources/css/common.css" rel="stylesheet">
+      <link href="${contextPath}/resources/css/Myapp.css" rel="stylesheet">
+      
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      
   </head>
 
   <body>
+  
+  <!-- Navigation Bar -->
+
+<div class="navbar">
+  <a class="active" href="/hm"><i class="fa fa-fw fa-home"></i> Home</a> 
+  <a href="#"><i class="fa fa-fw fa-search"></i> Search</a> 
+  <a href="#"><i class="fa fa-fw fa-envelope"></i> Contact</a> 
+  <a href="/login"><i class="fa fa-fw fa-user"></i> Login</a>
+  <a href="/registration"><i class="fa fa-fw fa-user"></i> Registration</a>
+</div>
 
     <div class="container">
       <form method="POST" action="${contextPath}/login" class="form-signin">

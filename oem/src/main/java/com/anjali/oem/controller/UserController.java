@@ -61,4 +61,11 @@ public class UserController {
     public String welcome(Model model) {
         return "welcome";
     }
+    
+    @GetMapping({"/", "/hm"})
+    public String home(Model model) {
+     
+        return "hm";
+    }
+
 }
