@@ -50,19 +50,41 @@ public class UserController {
     public String login(Model model, String error, String logout) {
         if (error != null)
             model.addAttribute("error", "Your username and password is invalid.");
+        
+        
 
-        if (logout != null)
+        if (logout != null) {
             model.addAttribute("message", "You have been logged out successfully.");
+            
+            //securityService.autoLogin(userForm.getUsername(), userForm.getPasswordConfirm());
+        }
 
         return "login";
     }
 
-    @GetMapping({"/", "/welcome"})
+    
+    
+ /*  @PostMapping("/")
+    public String loginSucess(@ModelAttribute("userLogin") User userForm, BindingResult bindingResult) {
+        userValidator.validate(userForm, bindingResult);
+
+        if (bindingResult.hasErrors()) {
+            return "registration";
+        }
+
+        securityService.autoLogin(userForm.getUsername(), userForm.getPasswordConfirm());
+
+        return "redirect:/welcome";
+    }
+   */
+    
+   
+    @GetMapping({"/","/welcome"})
     public String welcome(Model model) {
         return "welcome";
     }
     
-    @GetMapping({"/", "/hm"})
+    @GetMapping({"/hm"})
     public String home(Model model) {
      
         return "hm";
