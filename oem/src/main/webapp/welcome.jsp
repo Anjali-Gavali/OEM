@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <title>Bootstrap Example</title>
+   <title>Welcome</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -65,35 +65,98 @@
     </div>
     
      <div class="form-group">
-      <label class="control-label col-sm-2" for="issue">Issue:</label>
+      <label class="control-label col-sm-2" for="issue">Category:</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="email" placeholder="Enter Issue" name="issue">
+        <!-- <input type="text" class="form-control" id="email" placeholder="Enter Issue" name="category">
+         -->
+         <select class="browser-default custom-select">
+		  <option selected>Open this select menu</option>
+		  <option value="1">One</option>
+		  <option value="2">Two</option>
+		  <option value="3">Three</option>
+		</select>
+         
       </div>
     </div>
     
      <div class="form-group">
-      <label class="control-label col-sm-2" for="details">Details:</label>
+      <label class="control-label col-sm-2" for="details">Description:</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="details" placeholder="Enter Detail" name="detail">
+        <input type="text" class="form-control" id="details" placeholder="Enter Detail" name="description">
       </div>
     </div>
     
    
     <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" class="btn btn-default">Submit</button>
+        <button type="submit" class="btn btn-primary">Create Request</button>
+         <button type="submit" class="btn btn-default">Cancel</button>
+           <button type="submit" class="btn btn-default">Reset</button>
+             <button type="submit" class="btn btn-default">Attach Document</button>
+         
       </div>
+    </div>
+    <br><br>
+     <div class="form-group">    
+    <button class="btn btn-info" onclick="myFunction()">History</button>
     </div>
   </form>
 </div>
 
 
+<div class="container" id="myDIV"  ><!-- style="display:none" -->
+  <h2>My Requests </h2>
+  <p>The .table-bordered class adds borders to a table:</p>            
+  <table class="table table-bordered">
+    <thead>
+    
+    <th>My Open Request</th>
+   
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+      </tr>
+      
+    </thead>
+    <tbody>
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+      </tr>
+      <tr>
+        <td>Mary</td>
+        <td>Moe</td>
+        <td>mary@example.com</td>
+      </tr>
+      <tr>
+        <td>July</td>
+        <td>Dooley</td>
+        <td>july@example.com</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
 <script>
-var app = angular.module('myApp', []);
+/* var app = angular.module('myApp', []);
 app.controller('formCtrl', function($scope) {
     $scope.firstname = ${username};
-    
 });
+ */
+function myFunction() {
+	  var x = document.getElementById("myDIV");
+	 
+	  if (x.style.display === "none") {
+	    x.style.display = "block";
+	  } else {
+	    x.style.display = "none";
+	  }
+	}
+
 </script>
   
   
