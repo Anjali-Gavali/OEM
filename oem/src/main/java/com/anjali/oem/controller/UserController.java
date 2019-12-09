@@ -3,6 +3,7 @@ package com.anjali.oem.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -43,19 +44,20 @@ public class UserController {
 
         securityService.autoLogin(userForm.getUsername(), userForm.getPasswordConfirm());
 
-        return "redirect:/welcome";
+        return "redirect:/login";
     }
 
     @GetMapping("/login")
     public String login(Model model, String error, String logout) {
         if (error != null)
             model.addAttribute("error", "Your username and password is invalid.");
-        
+        System.out.println("In login Fail !!!!!!!!!!");
         
 
         if (logout != null) {
             model.addAttribute("message", "You have been logged out successfully.");
             
+            System.out.println("In login !!!!!!!!!!");
             //securityService.autoLogin(userForm.getUsername(), userForm.getPasswordConfirm());
         }
 
@@ -80,7 +82,18 @@ public class UserController {
     
    
     @GetMapping({"/","/welcome"})
-    public String welcome(Model model) {
+    public String welcome(ModelMap model) {
+    	
+    	/*userValidator.validate(userForm, bindingResult);
+
+        if (bindingResult.hasErrors()) {
+            return "login";
+        }
+
+        securityService.autoLogin(userForm.getUsername(), userForm.getPasswordConfirm());*/
+    	
+        model.addAttribute("name", "Anjali");
+        
         return "welcome";
     }
     

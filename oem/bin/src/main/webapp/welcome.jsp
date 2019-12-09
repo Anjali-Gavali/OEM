@@ -38,8 +38,7 @@
   <div class="form-group">
       <label class="control-label col-sm-2" for="email">Name:</label>
       <div class="col-sm-10">
-         ${name} 
-       <!--  <input type="text" ng-model="firstname" class="form-control" id="name" placeholder="Enter Name" name="name"> -->
+        <input type="text" ng-model="firstname" class="form-control" id="name" placeholder="Enter Name" name="name">
       </div>
     </div>
     
@@ -91,8 +90,7 @@
 <script>
 var app = angular.module('myApp', []);
 app.controller('formCtrl', function($scope) {
-    $scope.firstname = ${username};
-    
+    $scope.firstname = "John";
 });
 </script>
   
