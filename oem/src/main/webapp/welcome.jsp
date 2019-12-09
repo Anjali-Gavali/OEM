@@ -104,7 +104,7 @@
 </div>
 
 
-<div class="container" id="myDIV"  ><!-- style="display:none" -->
+<div class="container tab-content" id="myDIV"  ><!-- style="display:none" -->
   <h2>My Requests </h2>
 
 <h2>Dynamic Tabs</h2>

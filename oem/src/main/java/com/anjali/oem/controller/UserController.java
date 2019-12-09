@@ -48,11 +48,15 @@ public class UserController {
     }
 
     @GetMapping("/login")
-    public String login(Model model, String error, String logout) {
+    public String login(Model model, String error, String logout,@ModelAttribute("username")String name) {
+    	
+    	System.out.println(name);
+    	
         if (error != null)
             model.addAttribute("error", "Your username and password is invalid.");
         System.out.println("In login Fail !!!!!!!!!!");
         
+    
 
         if (logout != null) {
             model.addAttribute("message", "You have been logged out successfully.");
@@ -64,35 +68,17 @@ public class UserController {
         return "login";
     }
 
-    
-    
- /*  @PostMapping("/")
-    public String loginSucess(@ModelAttribute("userLogin") User userForm, BindingResult bindingResult) {
-        userValidator.validate(userForm, bindingResult);
-
-        if (bindingResult.hasErrors()) {
-            return "registration";
-        }
-
-        securityService.autoLogin(userForm.getUsername(), userForm.getPasswordConfirm());
-
-        return "redirect:/welcome";
-    }
-   */
+   
     
    
     @GetMapping({"/","/welcome"})
-    public String welcome(ModelMap model) {
+    public String welcome(@ModelAttribute("Username")String name,BindingResult result,ModelMap model) {
     	
-    	/*userValidator.validate(userForm, bindingResult);
-
-        if (bindingResult.hasErrors()) {
-            return "login";
-        }
-
-        securityService.autoLogin(userForm.getUsername(), userForm.getPasswordConfirm());*/
+    	System.out.println(name);
     	
-        model.addAttribute("name", "Anjali");
+    	User user = userService.findByUsername(name);
+    	
+        model.addAttribute("name", user.getUsername());
         
         return "welcome";
     }
