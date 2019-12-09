@@ -106,11 +106,20 @@
 
 <div class="container" id="myDIV"  ><!-- style="display:none" -->
   <h2>My Requests </h2>
-  <p>The .table-bordered class adds borders to a table:</p>            
+
+<h2>Dynamic Tabs</h2>
+  <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#new">New</a></li>
+    <li><a data-toggle="tab" href="#open">Open</a></li>
+    <li><a data-toggle="tab" href="#closed">Closed</a></li>
+   
+  </ul>
+  
+   <div class="tab-pane fade in active"  id ="new"  >  
   <table class="table table-bordered">
     <thead>
     
-    <th>My Open Request</th>
+    <th>New Request</th>
    
       <tr>
         <th>Firstname</th>
@@ -125,20 +134,55 @@
         <td>Doe</td>
         <td>john@example.com</td>
       </tr>
-      <tr>
-        <td>Mary</td>
-        <td>Moe</td>
-        <td>mary@example.com</td>
-      </tr>
-      <tr>
-        <td>July</td>
-        <td>Dooley</td>
-        <td>july@example.com</td>
-      </tr>
     </tbody>
   </table>
 </div>
 
+<div class="tab-pane fade " id ="open"  >  
+  <table class="table table-bordered">
+    <thead>
+    
+    <th>Open Request</th>
+   
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+      </tr>
+      
+    </thead>
+    <tbody>
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="tab-pane fade"  id ="closed"  >  
+  <table class="table table-bordered">
+    <thead>
+    
+    <th>Closed Request</th>
+   
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+      </tr>
+      
+    </thead>
+    <tbody>
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>    
 
 
 <script>
