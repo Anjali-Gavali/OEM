@@ -19,9 +19,11 @@ public class User_I {
 	    private String email;
 	    private String contact;
 	    private String esnNo;
-	    private String issue;
-	    private String details;
+	    private String category;
+	    private String description;
 	    private String status;
+	    
+	    
 		public Long getId() {
 			return id;
 		}
@@ -52,17 +54,21 @@ public class User_I {
 		public void setEsnNo(String esnNo) {
 			this.esnNo = esnNo;
 		}
-		public String getIssue() {
-			return issue;
+		
+		
+		public String getCategory() {
+			return category;
 		}
-		public void setIssue(String issue) {
-			this.issue = issue;
+		public void setCategory(String category) {
+			this.category = category;
 		}
-		public String getDetails() {
-			return details;
+		
+		
+		public String getDescription() {
+			return description;
 		}
-		public void setDetails(String details) {
-			this.details = details;
+		public void setDescription(String description) {
+			this.description = description;
 		}
 		public String getStatus() {
 			return status;

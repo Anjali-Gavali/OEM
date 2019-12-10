@@ -69,8 +69,8 @@ public class UserController {
         return "login";
     }
 
-  /*  @PostMapping("/login")
-    public String loginS(Authentication authentication,ModelMap model) {
+    @PostMapping("/welcome1")
+    public String loginS(@ModelAttribute("userForm") User userForm, BindingResult bindingResult) {
         
 
     	User user = userService.findByUsername(authentication.getName());
@@ -85,7 +85,7 @@ public class UserController {
         
         
         return "redirect:/welcome";
-    }*/
+    }
    
     
     @GetMapping({"/"})

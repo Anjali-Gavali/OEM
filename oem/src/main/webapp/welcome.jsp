@@ -19,55 +19,55 @@
 </head>
 <body>
   
- <!--  <div ng-app="myApp" ng-controller="formCtrl">
-  <form>
-    First Name: <input type="text" ng-model="firstname"><br>
-    Contact No: <input type="text" ng-model="firstname"><br>
-    Email: <input type="text" ng-model="firstname"><br>
-    ESN No: <input type="text" ng-model="firstname"><br>
-    Issue : <input type="text" ng-model="firstname"><br>
-    Details : <input type="text" ng-model="firstname"><br>
-  </form>
-</div>
- -->
-
-<div class="container" ng-app="myApp" ng-controller="formCtrl">
+<div class="container" ng-app="myApp" ng-controller="formCtrl" method="POST" modelAttribute="userForm">
   <h2>Horizontal form</h2>
-  <form class="form-horizontal" action="/action_page.php">
+  <form class="form-horizontal" action="/action_page.php" style="border:1px solid black">
   
+  <spring:bind path="username">
   <div class="form-group">
       <label class="control-label col-sm-2" for="email">Name:</label>
       <div class="col-sm-10">
         <p class="form-control-static">${name}</p>  
       </div>
     </div>
+    </spring:bind>
     
+    
+    <spring:bind path="contact">
     <div class="form-group">
       <label class="control-label col-sm-2" for="contact">Contact No:</label>
       <div class="col-sm-10">
           <p class="form-control-static">${contact}</p> 
       </div>
     </div>
+    </spring:bind>
+    
   
+  <spring:bind path="email">
     <div class="form-group">
       <label class="control-label col-sm-2" for="email">Email:</label>
       <div class="col-sm-10">
       <p class="form-control-static">${email}</p> 
       </div>
     </div>
+    </spring:bind>
     
+    
+    <spring:bind path="esnNo">
      <div class="form-group">
       <label class="control-label col-sm-2" for="esn">Esn No:</label>
       <div class="col-sm-10">
         <input type="text" class="form-control" id="esn" placeholder="Enter ESN No" name="esn">
       </div>
     </div>
+    </spring:bind>
     
+    
+    <spring:bind path="category">
      <div class="form-group">
       <label class="control-label col-sm-2" for="issue">Category:</label>
       <div class="col-sm-10">
-        <!-- <input type="text" class="form-control" id="email" placeholder="Enter Issue" name="category">
-         -->
+        
          <select class="browser-default custom-select">
 		  <option selected>Open this select menu</option>
 		  <option value="1">One</option>
@@ -77,14 +77,16 @@
          
       </div>
     </div>
+    </spring:bind>
     
+    <spring:bind path="description">
      <div class="form-group">
       <label class="control-label col-sm-2" for="details">Description:</label>
       <div class="col-sm-10">
         <input type="text" class="form-control" id="details" placeholder="Enter Detail" name="description">
       </div>
     </div>
-    
+    </spring:bind>
     
     <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">
@@ -185,11 +187,7 @@
 
 
 <script>
-/* var app = angular.module('myApp', []);
-app.controller('formCtrl', function($scope) {
-    $scope.firstname = ${username};
-});
- */
+
 function myFunction() {
 	  var x = document.getElementById("myDIV");
 	 
