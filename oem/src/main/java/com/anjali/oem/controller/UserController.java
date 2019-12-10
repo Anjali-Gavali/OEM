@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.anjali.oem.model.Request;
 import com.anjali.oem.model.User;
-import com.anjali.oem.model.User_I;
 import com.anjali.oem.service.SecurityService;
 import com.anjali.oem.service.UserIssueService;
 import com.anjali.oem.service.UserService;
@@ -70,9 +70,11 @@ public class UserController {
         return "login";
     }
 
-    @PostMapping("/welcome1")
-    public String loginS(@ModelAttribute("userForm") User_I userForm, BindingResult bindingResult) {
+    @PostMapping("/save")
+    public String loginS(@ModelAttribute("userForm") Request userForm, BindingResult bindingResult) {
         
+    	System.out.println("request call");
+    	
     	userIssueService.save(userForm);
    
     	//System.out.println("controller"+user.getUsername());

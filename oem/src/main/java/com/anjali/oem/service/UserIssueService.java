@@ -1,10 +1,10 @@
 package com.anjali.oem.service;
 
-import com.anjali.oem.model.User;
-import com.anjali.oem.model.User_I;
+import com.anjali.oem.model.Request;
+
 
 public interface UserIssueService {
 	
-	 void save(User_I user);
+	 void save(Request user);
 
 }
