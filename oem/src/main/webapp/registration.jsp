@@ -94,24 +94,9 @@
 		</select>
          
       </div>      
-                   
-                </div>
+                   </div>
             </spring:bind>
-            
-            
-             <!-- <div class="form-group">
-      <label class="control-label col-sm-2" for="role">Role:</label>
-      <div class="col-sm-10">
-       
-         <select class="browser-default custom-select">
-		  <option selected>Select Role</option>
-		  <option value="1">ROLE_USER</option>
-		  <option value="2">ROLE_ADMIN</option>
-		</select>
-         
-      </div>
-    </div> -->
-
+           
             <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
         </form:form>
 

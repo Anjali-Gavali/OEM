@@ -1,9 +1,5 @@
 package com.anjali.oem.controller;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-
-import org.apache.catalina.authenticator.SpnegoAuthenticator.AuthenticateAction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
@@ -15,7 +11,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.anjali.oem.model.User;
+import com.anjali.oem.model.User_I;
 import com.anjali.oem.service.SecurityService;
+import com.anjali.oem.service.UserIssueService;
 import com.anjali.oem.service.UserService;
 import com.anjali.oem.validator.UserValidator;
 
@@ -23,6 +21,9 @@ import com.anjali.oem.validator.UserValidator;
 public class UserController {
     @Autowired
     private UserService userService;
+    
+    @Autowired
+    private UserIssueService userIssueService;
 
     @Autowired
     private SecurityService securityService;
@@ -70,18 +71,12 @@ public class UserController {
     }
 
     @PostMapping("/welcome1")
-    public String loginS(@ModelAttribute("userForm") User userForm, BindingResult bindingResult) {
+    public String loginS(@ModelAttribute("userForm") User_I userForm, BindingResult bindingResult) {
         
-
-    	User user = userService.findByUsername(authentication.getName());
-    	System.out.println("controller"+user.getUsername());
-    	
-    	securityService.autoLogin(user.getUsername(), user.getPasswordConfirm());
-    	
-    	
-        model.addAttribute("name", user.getUsername());
-        model.addAttribute("contact", user.getContact());
-        model.addAttribute("email", user.getEmail());
+    	userIssueService.save(userForm);
+   
+    	//System.out.println("controller"+user.getUsername());
+   
         
         
         return "redirect:/welcome";
