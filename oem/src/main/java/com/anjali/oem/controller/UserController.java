@@ -53,39 +53,62 @@ public class UserController {
     }
 
     @GetMapping("/login")
-    public String login(Model model, String error, String logout,@ModelAttribute("username")String name) {
+    public String login(Model model, String error, String logout) {
     	
-    	System.out.println("login"+name);
-    	System.out.println(error);
     	
         if (error != null)
             model.addAttribute("error", "Your username and password is invalid.");
-        System.out.println("In login Fail !!!!!!!!!!");
         
-    
-
         if (logout != null) {
             model.addAttribute("message", "You have been logged out successfully.");
             
             System.out.println("In login !!!!!!!!!!");
-            //securityService.autoLogin(userForm.getUsername(), userForm.getPasswordConfirm());
+           
         }
 
         return "login";
     }
 
-   
-    
-   
-    @GetMapping({"/","/welcome"})
-    public String welcome( Authentication authentication,ModelMap model) {
- 
-    	System.out.println("Auth "+ authentication.getName());
+  /*  @PostMapping("/login")
+    public String loginS(Authentication authentication,ModelMap model) {
+        
+
     	User user = userService.findByUsername(authentication.getName());
+    	System.out.println("controller"+user.getUsername());
+    	
+    	securityService.autoLogin(user.getUsername(), user.getPasswordConfirm());
+    	
     	
         model.addAttribute("name", user.getUsername());
         model.addAttribute("contact", user.getContact());
         model.addAttribute("email", user.getEmail());
+        
+        
+        return "redirect:/welcome";
+    }*/
+   
+    
+    @GetMapping({"/"})
+    public String welcome() {
+        return "redirect:/welcome";
+    }
+    
+   
+    @GetMapping({"/welcome"})
+    public String welcome( Authentication authentication,ModelMap model) {
+ 
+   
+    	User user = userService.findByUsername(authentication.getName());
+    	System.out.println("controller"+user.getUsername());
+    	
+    	//securityService.autoLogin(user.getUsername(), user.getPasswordConfirm());
+    	
+    	
+        model.addAttribute("name", user.getUsername());
+        model.addAttribute("contact", user.getContact());
+        model.addAttribute("email", user.getEmail());
+        
+        
         return "welcome";
     }
     

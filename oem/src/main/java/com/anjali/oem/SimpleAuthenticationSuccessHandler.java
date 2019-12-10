@@ -3,6 +3,7 @@ package com.anjali.oem;
 import java.io.IOException;
 import java.util.Collection;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -22,16 +23,16 @@ import com.anjali.oem.model.User;
 @Component
 public class SimpleAuthenticationSuccessHandler implements AuthenticationSuccessHandler {
 
-	/*SimpleAuthenticationSuccessHandler(){
+	SimpleAuthenticationSuccessHandler(){
 		
-		System.out.println("12345");
-	}*/
+		super();
+	}
 	
     protected Log logger = LogFactory.getLog(this.getClass());
  
     private RedirectStrategy redirectStrategy = new DefaultRedirectStrategy();
     
-    @Override
+    /*@Override
     public void onAuthenticationSuccess(HttpServletRequest request, 
       HttpServletResponse response, Authentication authentication)
       throws IOException {
@@ -46,7 +47,7 @@ public class SimpleAuthenticationSuccessHandler implements AuthenticationSuccess
     
         System.out.println("Authentication "+authentication);
         clearAuthenticationAttributes(request);
-    }
+    }*/
  
     protected void handle(HttpServletRequest request, 
       HttpServletResponse response, Authentication authentication)
@@ -110,4 +111,20 @@ public class SimpleAuthenticationSuccessHandler implements AuthenticationSuccess
     protected RedirectStrategy getRedirectStrategy() {
         return redirectStrategy;
     }
+
+	@Override
+	public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
+			Authentication authentication) throws IOException, ServletException {
+		System.out.println("1234");
+   	 HttpSession session = request.getSession();
+        User authUser = (User) authentication.getPrincipal();
+        session.setAttribute("username", authUser.getUsername());
+        request.setAttribute("username", authUser.getUsername());
+   	
+       handle(request, response, authentication);
+   
+       System.out.println("Authentication "+authentication);
+       clearAuthenticationAttributes(request);
+		
+	}
 }

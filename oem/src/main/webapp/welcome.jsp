@@ -38,25 +38,21 @@
   <div class="form-group">
       <label class="control-label col-sm-2" for="email">Name:</label>
       <div class="col-sm-10">
-         ${name} 
-       <!--  <input type="text" ng-model="firstname" class="form-control" id="name" placeholder="Enter Name" name="name"> -->
+        <p class="form-control-static">${name}</p>  
       </div>
     </div>
     
     <div class="form-group">
       <label class="control-label col-sm-2" for="contact">Contact No:</label>
       <div class="col-sm-10">
-          ${contact}
-       <!--  <input type="text" class="form-control" id="contact" placeholder="Enter email" name="contact"> -->
+          <p class="form-control-static">${contact}</p> 
       </div>
     </div>
   
     <div class="form-group">
       <label class="control-label col-sm-2" for="email">Email:</label>
       <div class="col-sm-10">
-      
-          ${email}
-     <!--    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email"> -->
+      <p class="form-control-static">${email}</p> 
       </div>
     </div>
     

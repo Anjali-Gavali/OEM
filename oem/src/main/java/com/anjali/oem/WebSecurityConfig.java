@@ -10,6 +10,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 
 @Configuration
@@ -64,5 +65,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     	System.out.println("1111");
         return new SimpleAuthenticationSuccessHandler();
     }
+    
+    @Bean
+    public AuthenticationFailureHandler myAuthenticationFailuerHandler(){
+    	
+    	System.out.println("2222");
+        return new CustomAuthenticationFailureHandler();
+    }
+    
     
 }
