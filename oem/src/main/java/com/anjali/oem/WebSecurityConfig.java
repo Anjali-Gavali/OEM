@@ -32,6 +32,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
             .formLogin()
                 .loginPage("/login")
+                .usernameParameter("username")
                 .permitAll()
                 .and()
             .logout()
@@ -59,6 +60,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
  
     @Bean
     public AuthenticationSuccessHandler myAuthenticationSuccessHandler(){
+    	
+    	System.out.println("1111");
         return new SimpleAuthenticationSuccessHandler();
     }
     

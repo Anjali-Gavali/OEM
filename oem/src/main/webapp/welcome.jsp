@@ -46,14 +46,17 @@
     <div class="form-group">
       <label class="control-label col-sm-2" for="contact">Contact No:</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="contact" placeholder="Enter email" name="contact">
+          ${contact}
+       <!--  <input type="text" class="form-control" id="contact" placeholder="Enter email" name="contact"> -->
       </div>
     </div>
   
     <div class="form-group">
       <label class="control-label col-sm-2" for="email">Email:</label>
       <div class="col-sm-10">
-        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+      
+          ${email}
+     <!--    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email"> -->
       </div>
     </div>
     
@@ -86,7 +89,7 @@
       </div>
     </div>
     
-   
+    
     <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">
         <button type="submit" class="btn btn-primary">Create Request</button>

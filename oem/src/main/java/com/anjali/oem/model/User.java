@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
@@ -29,8 +30,11 @@ public class User {
     @Transient
     private String passwordConfirm;
 
-    @ManyToMany
-    private Set<Role> roles;
+    @OneToOne
+    private Role role;
+    
+   /* @ManyToMany
+    private Set<Role> roles;*/
 
     public Long getId() {
         return id;
@@ -64,13 +68,13 @@ public class User {
         this.passwordConfirm = passwordConfirm;
     }
 
-    public Set<Role> getRoles() {
-        return roles;
-    }
+	public Role getRole() {
+		return role;
+	}
 
-    public void setRoles(Set<Role> roles) {
-        this.roles = roles;
-    }
+	public void setRole(Role role) {
+		this.role = role;
+	}
 
 	public String getEmail() {
 		return email;

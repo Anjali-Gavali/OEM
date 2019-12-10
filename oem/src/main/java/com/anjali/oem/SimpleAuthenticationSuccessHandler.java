@@ -17,20 +17,34 @@ import org.springframework.security.web.WebAttributes;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.stereotype.Component;
 
+import com.anjali.oem.model.User;
+
 @Component
 public class SimpleAuthenticationSuccessHandler implements AuthenticationSuccessHandler {
 
-  
+	SimpleAuthenticationSuccessHandler(){
+		
+		System.out.println("12345");
+	}
+	
     protected Log logger = LogFactory.getLog(this.getClass());
  
     private RedirectStrategy redirectStrategy = new DefaultRedirectStrategy();
- 
+    
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request, 
       HttpServletResponse response, Authentication authentication)
       throws IOException {
   
+    	System.out.println("1234");
+    	 HttpSession session = request.getSession();
+         User authUser = (User) authentication.getPrincipal();
+         session.setAttribute("username", authUser.getUsername());
+         request.setAttribute("username", authUser.getUsername());
+    	
         handle(request, response, authentication);
+    
+        System.out.println("Authentication "+authentication);
         clearAuthenticationAttributes(request);
     }
  
@@ -40,6 +54,10 @@ public class SimpleAuthenticationSuccessHandler implements AuthenticationSuccess
   
         String targetUrl = determineTargetUrl(authentication);
  
+        
+        System.out.println("2222");
+        System.out.println("targetUrl" + targetUrl);
+        
         if (response.isCommitted()) {
             logger.debug(
               "Response has already been committed. Unable to redirect to "
@@ -55,7 +73,11 @@ public class SimpleAuthenticationSuccessHandler implements AuthenticationSuccess
         boolean isAdmin = false;
         Collection<? extends GrantedAuthority> authorities
          = authentication.getAuthorities();
+        
         for (GrantedAuthority grantedAuthority : authorities) {
+        	
+        	
+        	
             if (grantedAuthority.getAuthority().equals("ROLE_USER")) {
                 isUser = true;
                 break;

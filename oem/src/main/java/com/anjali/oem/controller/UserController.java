@@ -1,6 +1,11 @@
 package com.anjali.oem.controller;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+import org.apache.catalina.authenticator.SpnegoAuthenticator.AuthenticateAction;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -50,7 +55,8 @@ public class UserController {
     @GetMapping("/login")
     public String login(Model model, String error, String logout,@ModelAttribute("username")String name) {
     	
-    	System.out.println(name);
+    	System.out.println("login"+name);
+    	System.out.println(error);
     	
         if (error != null)
             model.addAttribute("error", "Your username and password is invalid.");
@@ -72,14 +78,14 @@ public class UserController {
     
    
     @GetMapping({"/","/welcome"})
-    public String welcome(@ModelAttribute("Username")String name,BindingResult result,ModelMap model) {
-    	
-    	System.out.println(name);
-    	
-    	User user = userService.findByUsername(name);
+    public String welcome( Authentication authentication,ModelMap model) {
+ 
+    	System.out.println("Auth "+ authentication.getName());
+    	User user = userService.findByUsername(authentication.getName());
     	
         model.addAttribute("name", user.getUsername());
-        
+        model.addAttribute("contact", user.getContact());
+        model.addAttribute("email", user.getEmail());
         return "welcome";
     }
     
