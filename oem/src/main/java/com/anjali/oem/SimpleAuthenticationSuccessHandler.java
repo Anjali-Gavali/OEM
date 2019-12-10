@@ -22,10 +22,10 @@ import com.anjali.oem.model.User;
 @Component
 public class SimpleAuthenticationSuccessHandler implements AuthenticationSuccessHandler {
 
-	SimpleAuthenticationSuccessHandler(){
+	/*SimpleAuthenticationSuccessHandler(){
 		
 		System.out.println("12345");
-	}
+	}*/
 	
     protected Log logger = LogFactory.getLog(this.getClass());
  
