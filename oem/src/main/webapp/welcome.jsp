@@ -20,11 +20,11 @@
 </head>
 <body>
   
-<div class="container"  ><!-- method="POST" modelAttribute="userForm" -->
+<div class="container" ><!-- method="POST" modelAttribute="userForm" -->
   <h2>Horizontal form</h2>
  <%--  <s:form class="form-horizontal" action="/action_page.php" style="border:1px solid black"
   method="post" modelAttribute="request"> --%>
-  <form:form class="form-horizontal" action="/action_page.php" style="border:1px solid black" method="post" modelAttribute="request">
+  <form:form class="form-horizontal" action="/action_page.php" style="border:1px solid black" method ="post" modelAttribute="request" >
   
  
   <div class="form-group">
@@ -54,7 +54,7 @@
      <div class="form-group">
       <label class="control-label col-sm-2" for="esn">Esn No:</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="esn" placeholder="Enter ESN No" name="esn">
+        <input type="text" class="form-control" id="esn" placeholder="Enter ESN No" name="esnNo">
       </div>
     </div>
    
@@ -84,7 +84,7 @@
     
     <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" class="btn btn-primary" value="save">Create Request</button>
+        <button type="submit" class="btn btn-primary" >Create Request</button>
          <button type="submit" class="btn btn-default">Cancel</button>
            <button type="submit" class="btn btn-default">Reset</button>
              <button type="submit" class="btn btn-default">Attach Document</button>
@@ -184,6 +184,20 @@
 
 
 <script>
+
+var myApp = angular.module('myApp', []);
+myApp.controller('RequestController', ['$scope', '$http', function($scope, $http) {
+$scope.submitRequest =function(){$http({
+    method: 'POST',
+    url: 'http://localhost:8080/save'
+ }).then(function (response){
+	
+ },function (error){
+	 $scope.resMsg = "No Data";
+ });
+}
+
+}]);
 
 function myFunction() {
 	  var x = document.getElementById("myDIV");
