@@ -1,7 +1,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
-<%@ taglib prefix="s" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -24,8 +24,7 @@
   <h2>Horizontal form</h2>
  <%--  <s:form class="form-horizontal" action="/action_page.php" style="border:1px solid black"
   method="post" modelAttribute="request"> --%>
-  <form class="form-horizontal" action="/action_page.php" style="border:1px solid black"
- >
+  <form:form class="form-horizontal" action="/action_page.php" style="border:1px solid black" method="post" modelAttribute="request">
   
  
   <div class="form-group">
@@ -39,7 +38,7 @@
     <div class="form-group">
       <label class="control-label col-sm-2" for="contact">Contact No:</label>
       <div class="col-sm-10">
-          :p class="form-control-static">${contact}</p> 
+          <p class="form-control-static">${contact}</p> 
       </div>
     </div>
   
@@ -99,7 +98,7 @@
     </div>
     </div>
   <%-- </s:form> --%>
-  </form>
+  </form:form>
 </div>
 
 

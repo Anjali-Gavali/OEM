@@ -73,7 +73,7 @@ public class UserController {
         return "login";
     }
     
-    /*@RequestMapping(method = RequestMethod.POST)
+    @RequestMapping(method = RequestMethod.POST)
     public String submitForm(@ModelAttribute("request") Request request,
                             BindingResult result, SessionStatus status) 
     {
@@ -83,7 +83,7 @@ public class UserController {
     	
         return "redirect:/hm";
     }
-    */
+    
     
     @GetMapping({"/"})
     public String welcome() {
