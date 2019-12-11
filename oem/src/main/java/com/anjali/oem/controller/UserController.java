@@ -9,6 +9,9 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.support.SessionStatus;
 
 import com.anjali.oem.model.Request;
 import com.anjali.oem.model.User;
@@ -69,21 +72,18 @@ public class UserController {
 
         return "login";
     }
-
-    @PostMapping("/save")
-    public String loginS(@ModelAttribute("userForm") Request userForm, BindingResult bindingResult) {
+    
+    /*@RequestMapping(method = RequestMethod.POST)
+    public String submitForm(@ModelAttribute("request") Request request,
+                            BindingResult result, SessionStatus status) 
+    {
         
     	System.out.println("request call");
+    	userIssueService.save(request);
     	
-    	userIssueService.save(userForm);
-   
-    	//System.out.println("controller"+user.getUsername());
-   
-        
-        
-        return "redirect:/welcome";
+        return "redirect:/hm";
     }
-   
+    */
     
     @GetMapping({"/"})
     public String welcome() {
