@@ -91,14 +91,15 @@ public class UserController {
     
     @PostMapping("/welcome")
     public String welcome( @ModelAttribute("request") Request request,
-            BindingResult result, SessionStatus status) {
+            BindingResult result, SessionStatus status, ModelMap model) {
     	
     	
     	
     	System.out.println("request call" + request.getUsername());
     	userIssueService.save(request);
     	//userIssueService.findByUsername(request.getUsername())
-    	
+    	model.addAttribute("esn", request.getEsnNo());
+    	model.addAttribute("description", request.getDescription());
     	
     	
         return "welcome";

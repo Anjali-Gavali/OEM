@@ -102,7 +102,7 @@
 </div>
 
 
-<div class="container tab-content" id="myDIV"  ><!-- style="display:none" -->
+<div class="container tab-content" id="myDIV" style="display:none" ><!-- style="display:none" -->
   <h2>My Requests </h2>
 
 <h2>Dynamic Tabs</h2>
@@ -116,12 +116,13 @@
    
     <div id="new" class="tab-pane fade in active">
       <h3>New Request</h3>
-      <p> </p>
+      <p> ${esn} </p>
+      <p> ${description} </p>
     </div>
     
    </div>
   
-  
+ 
   <!--  <div class="tab-pane fade in active"  id ="new"  >  
   <table class="table table-bordered">
     <thead>
@@ -145,50 +146,6 @@
   </table>
 </div> -->
 
-<div class="tab-pane fade " id ="open"  >  
-  <table class="table table-bordered">
-    <thead>
-    
-    <th>Open Request</th>
-   
-      <tr>
-        <th>Firstname</th>
-        <th>Lastname</th>
-        <th>Email</th>
-      </tr>
-      
-    </thead>
-    <tbody>
-      <tr>
-        <td>John</td>
-        <td>Doe</td>
-        <td>john@example.com</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-<div class="tab-pane fade"  id ="closed"  >  
-  <table class="table table-bordered">
-    <thead>
-    
-    <th>Closed Request</th>
-   
-      <tr>
-        <th>Firstname</th>
-        <th>Lastname</th>
-        <th>Email</th>
-      </tr>
-      
-    </thead>
-    <tbody>
-      <tr>
-        <td>John</td>
-        <td>Doe</td>
-        <td>john@example.com</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
 </div>    
 
 
