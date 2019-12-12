@@ -20,7 +20,7 @@
 </head>
 <body>
   
-<div class="container" ><!-- method="POST" modelAttribute="userForm" -->
+<div class="container" >
   <h2>Horizontal form</h2>
  <%--  <s:form class="form-horizontal" action="/action_page.php" style="border:1px solid black"
   method="post" modelAttribute="request"> --%>
@@ -91,18 +91,19 @@
          
       </div>
     </div>
-    <br><br>
+
+  </form:form>
+  
+  <br><br>
      <div class="form-group">    
       <div class="col-sm-offset-2 col-sm-10">
     <button class="btn btn-info" onclick="myFunction()">History</button>
     </div>
     </div>
-  <%-- </s:form> --%>
-  </form:form>
 </div>
 
 
-<div class="container tab-content" id="myDIV" style="display:none" ><!-- style="display:none" -->
+<div class="container tab-content" id="myDIV" style="border-color: blue; border : outset;"><!-- style="display:none" -->
   <h2>My Requests </h2>
 
 <h2>Dynamic Tabs</h2>
@@ -122,31 +123,7 @@
     
    </div>
   
- 
-  <!--  <div class="tab-pane fade in active"  id ="new"  >  
-  <table class="table table-bordered">
-    <thead>
-    
-    <th>New Request</th>
-   
-      <tr>
-        <th>Firstname</th>
-        <th>Lastname</th>
-        <th>Email</th>
-      </tr>
-      
-    </thead>
-    <tbody>
-      <tr>
-        <td>John</td>
-        <td>Doe</td>
-        <td>john@example.com</td>
-      </tr>
-    </tbody>
-  </table>
-</div> -->
-
-</div>    
+  </div>
 
 
 <script>

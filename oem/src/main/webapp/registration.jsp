@@ -81,17 +81,11 @@
 
             <spring:bind path="role">
                 <div class="form-group ${status.error ? 'has-error' : ''}">
-                   <%--  <form:input type="text" path="role" class="form-control" placeholder="Role"
-                                ></form:input> --%>
-                                
-           <label class="control-label col-sm-2" for="role">Role:</label>
+          
       <div class="col-sm-10">
-       
-         <select class="browser-default custom-select">
-		  <option selected>Select Role</option>
-		  <option value="1">ROLE_USER</option>
-		  <option value="2">ROLE_ADMIN</option>
-		</select>
+       <b>Role: </b>
+         User <form:radiobutton path="role" value="ROLE_USER"/>  
+        Admin <form:radiobutton path="role" value="ROLE_ADMIN"/>  
          
       </div>      
                    </div>

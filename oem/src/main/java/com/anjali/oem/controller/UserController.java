@@ -1,7 +1,5 @@
 package com.anjali.oem.controller;
 
-import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
@@ -11,12 +9,12 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.support.SessionStatus;
 
 import com.anjali.oem.model.Request;
+import com.anjali.oem.model.Role;
 import com.anjali.oem.model.User;
+import com.anjali.oem.repository.RoleRepository;
 import com.anjali.oem.service.SecurityService;
 import com.anjali.oem.service.UserIssueService;
 import com.anjali.oem.service.UserService;
@@ -32,6 +30,9 @@ public class UserController {
 
     @Autowired
     private SecurityService securityService;
+    
+    @Autowired
+    private RoleRepository roleRepository;
 
     @Autowired
     private UserValidator userValidator;
@@ -51,6 +52,15 @@ public class UserController {
             return "registration";
         }
 
+       /* 
+        Role r = new Role();
+        r.setName(userForm.getUsername());
+        r.setName(name);
+        
+        */
+        
+        System.out.println("Role "+userForm.getRole());
+        
         userService.save(userForm);
 
         securityService.autoLogin(userForm.getUsername(), userForm.getPasswordConfirm());
