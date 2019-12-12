@@ -24,7 +24,7 @@
   <h2>Horizontal form</h2>
  <%--  <s:form class="form-horizontal" action="/action_page.php" style="border:1px solid black"
   method="post" modelAttribute="request"> --%>
-  <form:form class="form-horizontal" action="/action_page.php" style="border:1px solid black" method ="post" modelAttribute="request" >
+  <form:form class="form-horizontal"  style="border:1px solid black" method="POST" modelAttribute="request" >
   
  
   <div class="form-group">

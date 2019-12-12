@@ -1,5 +1,7 @@
 package com.anjali.oem.controller;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
@@ -73,17 +75,31 @@ public class UserController {
         return "login";
     }
     
-    @RequestMapping(method = RequestMethod.POST)
-    public String submitForm(@ModelAttribute("request") Request request,
+   /* @RequestMapping(method = RequestMethod.POST)
+    public String submitForm(@Valid @ModelAttribute("request") Request request,
                             BindingResult result, SessionStatus status) 
     {
         
     	System.out.println("request call");
     	userIssueService.save(request);
     	
+        return "/success";
+    }*/
+    
+  
+
+    
+    @PostMapping("/welcome")
+    public String welcome( @ModelAttribute("request") Request request,
+            BindingResult result, SessionStatus status) {
+    	
+    	
+    	System.out.println("request call");
+    	userIssueService.save(request);
+    	
         return "redirect:/hm";
     }
-    
+
     
     @GetMapping({"/"})
     public String welcome() {
@@ -97,9 +113,6 @@ public class UserController {
    
     	User user = userService.findByUsername(authentication.getName());
     	System.out.println("controller"+user.getUsername());
-    	
-    	//securityService.autoLogin(user.getUsername(), user.getPasswordConfirm());
-    	
     	
         model.addAttribute("name", user.getUsername());
         model.addAttribute("contact", user.getContact());
