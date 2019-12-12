@@ -30,7 +30,7 @@
   <div class="form-group">
       <label class="control-label col-sm-2" for="email">Name:</label>
       <div class="col-sm-10">
-        <p class="form-control-static">${name}</p>  
+        <p class="form-control-static" name="username">${name}</p>  
       </div>
     </div>
    
@@ -38,7 +38,7 @@
     <div class="form-group">
       <label class="control-label col-sm-2" for="contact">Contact No:</label>
       <div class="col-sm-10">
-          <p class="form-control-static">${contact}</p> 
+          <p class="form-control-static" name="contact">${contact}</p> 
       </div>
     </div>
   
@@ -46,7 +46,7 @@
     <div class="form-group">
       <label class="control-label col-sm-2" for="email">Email:</label>
       <div class="col-sm-10">
-      <p class="form-control-static">${email}</p> 
+      <p class="form-control-static" name="email">${email}</p> 
       </div>
     </div>
   
@@ -112,8 +112,17 @@
     <li><a data-toggle="tab" href="#closed">Closed</a></li>
    
   </ul>
+   <div class="tab-content">
+   
+    <div id="new" class="tab-pane fade in active">
+      <h3>New Request</h3>
+      <p> </p>
+    </div>
+    
+   </div>
   
-   <div class="tab-pane fade in active"  id ="new"  >  
+  
+  <!--  <div class="tab-pane fade in active"  id ="new"  >  
   <table class="table table-bordered">
     <thead>
     
@@ -134,7 +143,7 @@
       </tr>
     </tbody>
   </table>
-</div>
+</div> -->
 
 <div class="tab-pane fade " id ="open"  >  
   <table class="table table-bordered">

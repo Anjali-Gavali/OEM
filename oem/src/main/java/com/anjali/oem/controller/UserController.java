@@ -94,10 +94,14 @@ public class UserController {
             BindingResult result, SessionStatus status) {
     	
     	
-    	System.out.println("request call");
-    	userIssueService.save(request);
     	
-        return "redirect:/hm";
+    	System.out.println("request call" + request.getUsername());
+    	userIssueService.save(request);
+    	//userIssueService.findByUsername(request.getUsername())
+    	
+    	
+    	
+        return "welcome";
     }
 
     
